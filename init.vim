@@ -336,9 +336,7 @@ let g:airline#extensions#whitespace#enabled=0
 
 let g:cursorhold_updatetime = 100
 
-
 let g:tagbar_ctags_bin = '/usr/bin/ctags'
-
 
 let g:maplocalleader=';'
 let g:defx_icons_column_length = 2
