@@ -154,14 +154,7 @@ if has("autocmd")
 endif
 
 " 自动删除行尾空格
-autocmd BufWritePre *.c :%s/\s\+$//e
-autocmd BufWritePre *.cc :%s/\s\+$//e
-autocmd BufWritePre *.cpp :%s/\s\+$//e
-autocmd BufWritePre *.h :%s/\s\+$//e
-autocmd BufWritePre *.hh :%s/\s\+$//e
-autocmd BufWritePre *.hpp :%s/\s\+$//e
-autocmd BufWritePre *.py :%s/\s\+$//e
-autocmd BufWritePre *.vim :%s/\s\+$//e
+autocmd BufWritePre * :%s/\s\+$//e
 
 " 颜色调整
 highlight PMenu ctermfg=0 ctermbg=7
@@ -181,8 +174,9 @@ nnoremap <leader>q :bd<cr>
 nnoremap <leader>e :q<cr>
 nnoremap <leader>t :belowright 15split<cr>:term<cr>
 nnoremap <leader>rn <Plug>(coc-rename)
-xnoremap <leader>f  <Plug>(coc-format-selected)
-nnoremap <leader>f  <Plug>(coc-format-selected)
+" xnoremap <leader>f  <Plug>(coc-format-selected)
+" nnoremap <leader>f  <Plug>(coc-format-selected)
+nnoremap <leader>f  :Autoformat<cr>
 nnoremap <leader>qf  <Plug>(coc-fix-current)
 autocmd TermClose * if !v:event.status | exe 'bdelete! '..expand('<abuf>') | endif
 augroup mygroup
@@ -193,8 +187,7 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-tnoremap <esc><esc> <C-\><C-n>
-tnoremap <leader><esc> <C-\><C-n>A<esc>ccexit<cr>
+tnoremap <leader><esc> <C-\><C-n>
 
 nnoremap <tab> :bnext<cr>
 nnoremap <s-tab> :bprev<cr>
@@ -237,6 +230,7 @@ inoremap jj <esc>
 nnoremap <space>o :TagbarOpenAutoClose<cr>
 nnoremap <silent> <Leader>ag :Ag <c-r><c-w><cr>
 nnoremap <silent> <c-p> :Files<cr>
+nnoremap <silent> <c-b> :Buffers<cr>
 
 nnoremap <silent><nowait> <leader>d :CocList diagnostics<cr>
 nnoremap <silent> [d <Plug>(coc-diagnostic-prev)
@@ -287,6 +281,7 @@ Plug '907th/vim-auto-save'
 Plug 'luochen1990/rainbow'
 Plug 'airblade/vim-gitgutter'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
+Plug 'vim-autoformat/vim-autoformat'
 call plug#end()
 
 
@@ -372,7 +367,10 @@ let g:airline#extensions#whitespace#enabled=0
 
 let g:cursorhold_updatetime = 100
 
-let g:tagbar_ctags_bin = '/usr/bin/ctags'
+" mac
+let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+" ubuntu
+" let g:tagbar_ctags_bin = '/usr/bin/ctags'
 
 let g:maplocalleader=';'
 let g:defx_icons_column_length = 2
