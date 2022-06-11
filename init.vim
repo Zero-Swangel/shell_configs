@@ -296,7 +296,6 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 let g:coc_global_extensions = [
     \ 'coc-json',
-    \ 'coc-clangd',
     \ 'coc-cmake',
     \ 'coc-pyright',
     \ 'coc-go',
