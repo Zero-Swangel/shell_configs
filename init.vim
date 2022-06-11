@@ -179,8 +179,7 @@ let g:mapleader = ","
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :bd<cr>
 nnoremap <leader>e :q<cr>
-nnoremap <leader>t :term<cr>
-tnoremap <leader><esc> <C-\><C-n>
+nnoremap <leader>t :belowright 15split<cr>:term<cr>
 nnoremap <leader>rn <Plug>(coc-rename)
 xnoremap <leader>f  <Plug>(coc-format-selected)
 nnoremap <leader>f  <Plug>(coc-format-selected)
@@ -194,11 +193,14 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
+tnoremap <esc><esc> <C-\><C-n>
+tnoremap <leader><esc> <C-\><C-n>A<esc>ccexit<cr>
+
 nnoremap <tab> :bnext<cr>
 nnoremap <s-tab> :bprev<cr>
 nmap s <c-w>
-nnoremap <silent> <c-w>j :20split<cr>
-nnoremap <silent> <c-w>l :20vsplit<cr>
+nnoremap <silent> <c-w>j :split<cr>
+nnoremap <silent> <c-w>l :vsplit<cr>
 nnoremap = :vertical resize +1<cr>
 nnoremap - :vertical resize -1<cr>
 nnoremap <a-=> :resize +1<cr>
@@ -371,9 +373,7 @@ let g:airline#extensions#whitespace#enabled=0
 
 let g:cursorhold_updatetime = 100
 
-
-let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
-
+let g:tagbar_ctags_bin = '/usr/bin/ctags'
 
 let g:maplocalleader=';'
 let g:defx_icons_column_length = 2
