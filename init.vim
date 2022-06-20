@@ -13,6 +13,7 @@ let skip_defaults_vim=1
 
 "显示行号
 set nu
+set relativenumber
 
 "光标上下行数
 set scrolloff=7
@@ -35,6 +36,7 @@ set mouse=a
 "tab缩进
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
 set expandtab
 set smarttab
 
@@ -119,27 +121,31 @@ set signcolumn=number
 "set clipboard=unnamed
 
 " 显示TAB和行尾
-"set listchars=tab:>>,trail:-
-"set list
-"highlight WhitespaceEOL ctermbg=green guibg=green
-"match WhitespaceEOL /\s\+$/
+" set listchars=tab:>>,trail:-
+" set list
+" highlight WhitespaceEOL ctermbg=green guibg=green
+" match WhitespaceEOL /\s\+$/
+
+" 大小写
+set smartcase
+set ignorecase
 
 " 括号自动补全
-" inoremap ' ''<ESC>i
-" inoremap " ""<ESC>i
-" inoremap ( ()<ESC>i
-" inoremap [ []<ESC>i
-" inoremap { {}<ESC>i
+" inoremap ' ''<esc>i
+" inoremap " ""<esc>i
+" inoremap ( ()<esc>i
+" inoremap [ []<esc>i
+" inoremap { {}<esc>i
 
 " 跳出自动补全的括号
-" func SkipPair()  
-"     if getline('.')[col('.') - 1] == ')' || getline('.')[col('.') - 1] == ']' || getline('.')[col('.') - 1] == '"' || getline('.')[col('.') - 1] == "'" || getline('.')[col('.') - 1] == '}'  
-"         return "\<ESC>la"  
-"     else  
-"         return "\t"  
-"     endif  
-" endfunc  
-" 将tab键绑定为跳出括号  
+" func SkipPair()
+"     if getline('.')[col('.') - 1] == ')' || getline('.')[col('.') - 1] == ']' || getline('.')[col('.') - 1] == '"' || getline('.')[col('.') - 1] == "'" || getline('.')[col('.') - 1] == '}'
+"         return "\<esc>la"
+"     else
+"         return "\t"
+"     endif
+" endfunc
+" 将tab键绑定为跳出括号
 " inoremap <TAB> <c-r>=SkipPair()<cr>
 
 " 保存光标位置
@@ -148,12 +154,7 @@ if has("autocmd")
 endif
 
 " 自动删除行尾空格
-autocmd BufWritePre *.c :%s/\s\+$//e
-autocmd BufWritePre *.cc :%s/\s\+$//e
-autocmd BufWritePre *.cpp :%s/\s\+$//e
-autocmd BufWritePre *.h :%s/\s\+$//e
-autocmd BufWritePre *.hh :%s/\s\+$//e
-autocmd BufWritePre *.hpp :%s/\s\+$//e
+autocmd BufWritePre * :%s/\s\+$//e
 
 " 颜色调整
 highlight PMenu ctermfg=0 ctermbg=7
@@ -173,8 +174,9 @@ nnoremap <leader>q :bd<cr>
 nnoremap <leader>e :q<cr>
 nnoremap <leader>t :belowright 15split<cr>:term<cr>
 nnoremap <leader>rn <Plug>(coc-rename)
-xnoremap <leader>f  <Plug>(coc-format-selected)
-nnoremap <leader>f  <Plug>(coc-format-selected)
+" xnoremap <leader>f  <Plug>(coc-format-selected)
+" nnoremap <leader>f  <Plug>(coc-format-selected)
+nnoremap <leader>f  :Autoformat<cr>
 " nnoremap <leader>qf  <Plug>(coc-fix-current)
 autocmd TermClose * if !v:event.status | exe 'bdelete! '..expand('<abuf>') | endif
 augroup mygroup
@@ -185,8 +187,7 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-tnoremap <esc><esc> <C-\><C-n>
-tnoremap <leader><esc> <C-\><C-n>A<esc>ccexit<cr>
+tnoremap <leader><esc> <C-\><C-n>
 
 nnoremap <tab> :bnext<cr>
 nnoremap <s-tab> :bprev<cr>
@@ -208,6 +209,17 @@ nnoremap <c-d> 10j
 nnoremap <pageup> 10k
 nnoremap <pagedown> 10j
 nnoremap <esc> <esc>:noh<cr>
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ CheckBackspace() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+nnoremap ]h <Plug>(GitGutterNextHunk)
+nnoremap [h <Plug>(GitGutterPrevHunk)
 
 inoremap <a-h> <left>
 inoremap <a-j> <down>
@@ -218,9 +230,13 @@ inoremap jj <esc>
 nnoremap <space>o :TagbarOpenAutoClose<cr>
 nnoremap <silent> <Leader>ag :Ag <c-r><c-w><cr>
 nnoremap <silent> <c-p> :Files<cr>
+nnoremap <silent> <c-b> :Buffers<cr>
 
+nnoremap <silent><nowait> <leader>d :CocList diagnostics<cr>
+nnoremap <silent> [d <Plug>(coc-diagnostic-prev)
+nnoremap <silent> ]d <Plug>(coc-diagnostic-next)
 nnoremap <silent> gd <Plug>(coc-definition)
-nnoremap <silent> gt <Plug>(coc-type-definition)
+nnoremap <silent> gy <Plug>(coc-type-definition)
 nnoremap <silent> gi <Plug>(coc-implementation)
 nnoremap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call ShowDocumentation()<CR>
@@ -232,6 +248,8 @@ function! ShowDocumentation()
   endif
 endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
+nnoremap <silent> <C-s> <Plug>(coc-range-select)
+xnoremap <silent> <C-s> <Plug>(coc-range-select)
 
 imap <silent><script><expr> <a-tab> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
@@ -262,12 +280,24 @@ Plug 'jiangmiao/auto-pairs'
 Plug '907th/vim-auto-save'
 Plug 'luochen1990/rainbow'
 Plug 'airblade/vim-gitgutter'
+Plug 'jackguo380/vim-lsp-cxx-highlight'
+Plug 'vim-autoformat/vim-autoformat'
 call plug#end()
 
 
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+let g:coc_global_extensions = [
+    \ 'coc-json',
+    \ 'coc-cmake',
+    \ 'coc-pyright',
+    \ 'coc-go',
+    \ 'coc-yaml',
+    \ 'coc-highlight',
+    \ 'coc-vimlsp'
+    \ ]
 
 
 let g:go_highlight_types = 1
@@ -313,6 +343,7 @@ let g:tagbar_type_go = {
 	\ 'ctagsargs' : '-sort -silent'
 \ }
 
+let g:lsp_cxx_hl_use_text_props = 1
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -336,7 +367,10 @@ let g:airline#extensions#whitespace#enabled=0
 
 let g:cursorhold_updatetime = 100
 
-let g:tagbar_ctags_bin = '/usr/bin/ctags'
+" mac
+let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+" ubuntu
+" let g:tagbar_ctags_bin = '/usr/bin/ctags'
 
 let g:maplocalleader=';'
 let g:defx_icons_column_length = 2
@@ -418,3 +452,18 @@ let g:rainbow_active = 1
 let g:AutoPairsShortcutJump = '<s-tab>'
 
 command! -nargs=0 Format :call CocActionAsync('format')
+
+hi default link LspCxxHlSymFunction cxxFunction
+hi default link LspCxxHlSymFunctionParameter cxxParameter
+hi default link LspCxxHlSymFileVariableStatic cxxFileVariableStatic
+hi default link LspCxxHlSymStruct cxxStruct
+hi default link LspCxxHlSymStructField cxxStructField
+hi default link LspCxxHlSymFileTypeAlias cxxTypeAlias
+hi default link LspCxxHlSymClassField cxxStructField
+hi default link LspCxxHlSymEnum cxxEnum
+hi default link LspCxxHlSymVariableExtern cxxFileVariableStatic
+hi default link LspCxxHlSymVariable cxxVariable
+hi default link LspCxxHlSymMacro cxxMacro
+hi default link LspCxxHlSymEnumMember cxxEnumMember
+hi default link LspCxxHlSymParameter cxxParameter
+hi default link LspCxxHlSymClass cxxTypeAlias
