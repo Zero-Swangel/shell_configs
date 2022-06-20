@@ -175,7 +175,7 @@ nnoremap <leader>t :belowright 15split<cr>:term<cr>
 nnoremap <leader>rn <Plug>(coc-rename)
 xnoremap <leader>f  <Plug>(coc-format-selected)
 nnoremap <leader>f  <Plug>(coc-format-selected)
-nnoremap <leader>qf  <Plug>(coc-fix-current)
+" nnoremap <leader>qf  <Plug>(coc-fix-current)
 autocmd TermClose * if !v:event.status | exe 'bdelete! '..expand('<abuf>') | endif
 augroup mygroup
   autocmd!
