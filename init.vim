@@ -13,7 +13,7 @@ let skip_defaults_vim=1
 
 "显示行号
 set nu
-set relativenumber
+" set relativenumber
 
 "光标上下行数
 set scrolloff=7
@@ -169,89 +169,88 @@ nnoremap U <c-R>
 vnoremap <c-c> "+y
 
 let g:mapleader = ","
-nnoremap <leader>w :w<cr>
-nnoremap <leader>q :bd<cr>
-nnoremap <leader>e :q<cr>
-nnoremap <leader>t :belowright 15split<cr>:term<cr>
-nnoremap <leader>rn <Plug>(coc-rename)
-" xnoremap <leader>f  <Plug>(coc-format-selected)
-" nnoremap <leader>f  <Plug>(coc-format-selected)
-nnoremap <leader>f  :Autoformat<cr>
-" nnoremap <leader>qf  <Plug>(coc-fix-current)
+nnoremap <silent> <leader>w :bd<cr>
+nnoremap <silent> <leader>e :q<cr>
+nnoremap <silent> <leader>t :belowright 15split<cr>:term<cr>
+nmap <silent> <leader>rn <plug>(coc-rename)
+" xmap <leader>f  <plug>(coc-format-selected)
+" nmap <leader>f  <plug>(coc-format-selected)
+nnoremap <silent> <leader>f :<c-u>Autoformat<cr>
+nmap <leader>qf  <plug>(coc-fix-current)
 autocmd TermClose * if !v:event.status | exe 'bdelete! '..expand('<abuf>') | endif
 augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder.
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+    autocmd!
+    " Setup formatexpr specified filetype(s).
+    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+    " Update signature help on jump placeholder.
+    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
 tnoremap <leader><esc> <C-\><C-n>
 
-nnoremap <tab> :bnext<cr>
-nnoremap <s-tab> :bprev<cr>
+nnoremap <silent> <tab> :bnext<cr>
+nnoremap <silent> <s-tab> :bprev<cr>
 nmap s <c-w>
 nnoremap <silent> <c-w>j :split<cr>
 nnoremap <silent> <c-w>l :vsplit<cr>
-nnoremap = :vertical resize +1<cr>
-nnoremap - :vertical resize -1<cr>
-nnoremap <a-=> :resize +1<cr>
-nnoremap <a--> :resize -1<cr>
-nnoremap <c-h> <c-w>h
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-l> <c-w>l
-nnoremap <a-j> <c-e>
-nnoremap <a-k> <c-y>
-nnoremap <c-u> 10k
-nnoremap <c-d> 10j
-nnoremap <pageup> 10k
-nnoremap <pagedown> 10j
-nnoremap <esc> <esc>:noh<cr>
+nnoremap <silent> = :vertical resize +1<cr>
+nnoremap <silent> - :vertical resize -1<cr>
+nnoremap <silent> <a-=> :resize +1<cr>
+nnoremap <silent> <a--> :resize -1<cr>
+nnoremap <silent> <c-h> <c-w>h
+nnoremap <silent> <c-j> <c-w>j
+nnoremap <silent> <c-k> <c-w>k
+nnoremap <silent> <c-l> <c-w>l
+nnoremap <silent> <a-j> <c-e>
+nnoremap <silent> <a-k> <c-y>
+nnoremap <silent> <c-u> 10k
+nnoremap <silent> <c-d> 10j
+nnoremap <silent> <pageup> 10k
+nnoremap <silent> <pagedown> 10j
+nnoremap <silent> <esc> <esc>:noh<cr>
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ CheckBackspace() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+            \ pumvisible() ? "\<C-n>" :
+            \ CheckBackspace() ? "\<TAB>" :
+            \ coc#refresh()
+inoremap <silent><expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 function! CheckBackspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-nnoremap ]h <Plug>(GitGutterNextHunk)
-nnoremap [h <Plug>(GitGutterPrevHunk)
+nnoremap <silent> ]h :GitGutterNextHunk<cr>
+nnoremap <silent> [h :GitGutterPrevHunk<cr>
 
-inoremap <a-h> <left>
-inoremap <a-j> <down>
-inoremap <a-k> <up>
-inoremap <a-l> <right>
-inoremap jj <esc>
+inoremap <silent> <a-h> <left>
+inoremap <silent> <a-j> <down>
+inoremap <silent> <a-k> <up>
+inoremap <silent> <a-l> <right>
+inoremap <silent> jj <esc>
 
-nnoremap <space>o :TagbarOpenAutoClose<cr>
+nnoremap <silent> <space>o :TagbarOpenAutoClose<cr>
 nnoremap <silent> <Leader>ag :Ag <c-r><c-w><cr>
 nnoremap <silent> <c-p> :Files<cr>
 nnoremap <silent> <c-b> :Buffers<cr>
 
 nnoremap <silent><nowait> <leader>d :CocList diagnostics<cr>
-nnoremap <silent> [d <Plug>(coc-diagnostic-prev)
-nnoremap <silent> ]d <Plug>(coc-diagnostic-next)
-nnoremap <silent> gd <Plug>(coc-definition)
-nnoremap <silent> gy <Plug>(coc-type-definition)
-nnoremap <silent> gi <Plug>(coc-implementation)
-nnoremap <silent> gr <Plug>(coc-references)
-nnoremap <silent> K :call ShowDocumentation()<CR>
+nmap <silent> [d <plug>(coc-diagnostic-prev)
+nmap <silent> ]d <plug>(coc-diagnostic-next)
+nmap <silent> gd <plug>(coc-definition)
+nmap <silent> gy <plug>(coc-type-definition)
+nmap <silent> gi <plug>(coc-implementation)
+nmap <silent> gr <plug>(coc-references)
+nnoremap <silent> K :call ShowDocumentation()<cr>
 function! ShowDocumentation()
-  if CocAction('hasProvider', 'hover')
-    call CocActionAsync('doHover')
-  else
-    call feedkeys('K', 'in')
-  endif
+    if CocAction('hasProvider', 'hover')
+        call CocActionAsync('doHover')
+    else
+        call feedkeys('K', 'in')
+    endif
 endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
-nnoremap <silent> <C-s> <Plug>(coc-range-select)
-xnoremap <silent> <C-s> <Plug>(coc-range-select)
+nmap <silent> <C-s> <plug>(coc-range-select)
+xmap <silent> <C-s> <plug>(coc-range-select)
 
-imap <silent><script><expr> <a-tab> copilot#Accept("\<CR>")
+imap <silent><script><expr> <a-tab> copilot#Accept("\<cr>")
 let g:copilot_no_tab_map = v:true
 
 
@@ -290,14 +289,14 @@ let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 let g:coc_global_extensions = [
-    \ 'coc-json',
-    \ 'coc-cmake',
-    \ 'coc-pyright',
-    \ 'coc-go',
-    \ 'coc-yaml',
-    \ 'coc-highlight',
-    \ 'coc-vimlsp'
-    \ ]
+            \ 'coc-json',
+            \ 'coc-cmake',
+            \ 'coc-pyright',
+            \ 'coc-go',
+            \ 'coc-yaml',
+            \ 'coc-highlight',
+            \ 'coc-vimlsp'
+            \ ]
 
 
 let g:go_highlight_types = 1
@@ -316,32 +315,32 @@ let g:go_list_type = "quickfix"
 
 
 let g:tagbar_type_go = {
-	\ 'ctagstype' : 'go',
-	\ 'kinds'     : [
-		\ 'p:package',
-		\ 'i:imports:1',
-		\ 'c:constants',
-		\ 'v:variables',
-		\ 't:types',
-		\ 'n:interfaces',
-		\ 'w:fields',
-		\ 'e:embedded',
-		\ 'm:methods',
-		\ 'r:constructor',
-		\ 'f:functions'
-	\ ],
-	\ 'sro' : '.',
-	\ 'kind2scope' : {
-		\ 't' : 'ctype',
-		\ 'n' : 'ntype'
-	\ },
-	\ 'scope2kind' : {
-		\ 'ctype' : 't',
-		\ 'ntype' : 'n'
-	\ },
-	\ 'ctagsbin'  : 'gotags',
-	\ 'ctagsargs' : '-sort -silent'
-\ }
+            \ 'ctagstype' : 'go',
+            \ 'kinds'     : [
+                \ 'p:package',
+                \ 'i:imports:1',
+                \ 'c:constants',
+                \ 'v:variables',
+                \ 't:types',
+                \ 'n:interfaces',
+                \ 'w:fields',
+                \ 'e:embedded',
+                \ 'm:methods',
+                \ 'r:constructor',
+                \ 'f:functions'
+                \ ],
+                \ 'sro' : '.',
+                \ 'kind2scope' : {
+                    \ 't' : 'ctype',
+                    \ 'n' : 'ntype'
+                    \ },
+                    \ 'scope2kind' : {
+                        \ 'ctype' : 't',
+                        \ 'ntype' : 'n'
+                        \ },
+                        \ 'ctagsbin'  : 'gotags',
+                        \ 'ctagsargs' : '-sort -silent'
+                        \ }
 
 let g:lsp_cxx_hl_use_text_props = 1
 
@@ -367,27 +366,45 @@ let g:airline#extensions#whitespace#enabled=0
 
 let g:cursorhold_updatetime = 100
 
-" mac
-let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
-" ubuntu
-" let g:tagbar_ctags_bin = '/usr/bin/ctags'
+if !exists('g:env')
+    if has('win64') || has('win32') || has('win16')
+        let g:env = 'WINDOWS'
+    else
+        let g:env = toupper(substitute(system('uname'), '\n', '', ''))
+    endif
+endif
+if g:env =~ 'DARWIN'
+    let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+endif
+if g:env =~ 'LINUX'
+    let g:tagbar_ctags_bin = '/usr/bin/ctags'
+endif
 
 let g:maplocalleader=';'
 let g:defx_icons_column_length = 2
-nnoremap <silent> <LocalLeader>e :<C-u>Defx -resume -toggle -buffer-name=tab`'defx' . tabpagenr()`<CR>
-nnoremap <silent> <LocalLeader>a :<C-u>Defx -resume -buffer-name=tab`'defx' . tabpagenr()` `escape(expand('%:p:h'), ' :')` -search=`expand('%:p')`<CR>
+nnoremap <silent> <LocalLeader>e :<C-u>Defx -resume -buffer-name=tab`'defx' . tabpagenr()`<cr>
+nnoremap <silent> <LocalLeader>a :<C-u>Defx -resume -buffer-name=tab`'defx' . tabpagenr()` `escape(expand('%:p:h'), ' :')` -search=`expand('%:p')`<cr>
+func! StartDefx() abort
+    let s:arg = argv(0)
+    if isdirectory(s:arg)
+        return s:arg
+    else
+        return fnamemodify(s:arg, ':h')
+    endif
+endfunc
+autocmd VimEnter * Defx `StartDefx()` -buffer-name=tab`'defx' . tabpagenr()` -no-focus -search=`expand('%:p')`
 function! s:defx_mappings() abort
-	setlocal signcolumn=no
-	nnoremap <silent><buffer><expr> <cr> defx#is_directory() ? defx#do_action('open_or_close_tree') : defx#do_action('multi', ['drop'])
-	nnoremap <silent><buffer><expr> <2-LeftMouse> defx#is_directory() ? defx#do_action('open_or_close_tree') : defx#do_action('multi', ['drop'])
+    setlocal signcolumn=no
+    nnoremap <silent><buffer><expr> <cr> defx#is_directory() ? defx#do_action('open_or_close_tree') : defx#do_action('multi', ['drop'])
+    nnoremap <silent><buffer><expr> <2-LeftMouse> defx#is_directory() ? defx#do_action('open_or_close_tree') : defx#do_action('multi', ['drop'])
     nnoremap <silent><buffer><expr> o defx#do_action('open')
     nnoremap <silent><buffer><expr> h defx#do_action('cd', ['..'])
     nnoremap <silent><buffer><expr> ~ defx#do_action('cd')
     nnoremap <silent><buffer><expr> yy defx#do_action('copy')
     nnoremap <silent><buffer><expr> dd defx#do_action('remove')
-	nnoremap <silent><buffer><expr> pp defx#do_action('paste')
+    nnoremap <silent><buffer><expr> pp defx#do_action('paste')
     nnoremap <silent><buffer><expr> K defx#do_action('new_directory')
-	nnoremap <silent><buffer><expr> N defx#do_action('new_file')
+    nnoremap <silent><buffer><expr> N defx#do_action('new_file')
     nnoremap <silent><buffer><expr> R defx#do_action('rename')
     nnoremap <silent><buffer><expr> . defx#do_action('toggle_ignored_files')
     nnoremap <silent><buffer><expr> cd defx#do_action('change_vim_cwd')
@@ -395,45 +412,44 @@ endfunction
 autocmd FileType defx call s:defx_mappings()
 autocmd BufWritePost * call defx#redraw()
 call defx#custom#option('_', {
-	\ 'columns': 'indent:indent:git:icons:filename',
-	\ 'winwidth': 40,
-	\ 'split': 'vertical',
-	\ 'direction': 'topleft',
-	\ 'listed': 1,
-	\ 'show_ignored_files': 0,
-	\ 'root_marker': '≡ ',
-	\ 'ignored_files':
-	\     '.mypy_cache,.pytest_cache,.git,.hg,.svn,.stversions'
-	\   . ',__pycache__,.sass-cache,*.egg-info,.DS_Store,*.pyc,*.swp'
-	\ })
+            \ 'columns': 'indent:indent:git:icons:filename',
+            \ 'winwidth': 40,
+            \ 'split': 'vertical',
+            \ 'direction': 'topleft',
+            \ 'listed': 1,
+            \ 'show_ignored_files': 0,
+            \ 'root_marker': '≡ ',
+            \ 'ignored_files':
+            \     '.mypy_cache,.pytest_cache,.git,.hg,.svn,.stversions'
+            \   . ',__pycache__,.sass-cache,*.egg-info,.DS_Store,*.pyc,*.swp'
+            \ })
 call defx#custom#column('filename', {
-	\ 'min_width': 10,
-	\ 'max_width': 20,
-    \ })
+            \ 'min_width': 10,
+            \ 'max_width': 20,
+            \ })
 call defx#custom#column('icon', {
-    \ 'directory_icon': '▸',
-    \ 'opened_icon': '▾',
-    \ 'root_icon': ' ',
-    \ })
+            \ 'directory_icon': '▸',
+            \ 'opened_icon': '▾',
+            \ 'root_icon': ' ',
+            \ })
 call defx#custom#column('git', 'indicators', {
-    \ 'Modified'  : 'M',
-    \ 'Staged'    : '✚',
-    \ 'Untracked' : '✭',
-    \ 'Renamed'   : '➜',
-    \ 'Unmerged'  : '═',
-    \ 'Ignored'   : '☒',
-    \ 'Deleted'   : '✖',
-    \ 'Unknown'   : '?'
-    \ })
+            \ 'Modified'  : 'M',
+            \ 'Staged'    : '✚',
+            \ 'Untracked' : '✭',
+            \ 'Renamed'   : '➜',
+            \ 'Unmerged'  : '═',
+            \ 'Ignored'   : '☒',
+            \ 'Deleted'   : '✖',
+            \ 'Unknown'   : '?'
+            \ })
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 0 && exists('b:defx') | quit | endif
-
 
 let g:gutentags_project_root = ['.root', '.svn', '.git', '.project']
 let g:gutentags_ctags_tagfile = '.tags'
 let s:vim_tags = expand('~/.cache/tags')
 let g:gutentags_cache_dir = s:vim_tags
 if !isdirectory(s:vim_tags)
-   silent! call mkdir(s:vim_tags, 'p')
+    silent! call mkdir(s:vim_tags, 'p')
 endif
 let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
 let g:gutentags_ctags_extra_args += ['--c++-kinds=+pxI']
