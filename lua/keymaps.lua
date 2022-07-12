@@ -44,10 +44,10 @@ nnoremap('<leader>f', ':Autoformat<cr>')
 nmap('<leader>qf', '<Plug>(coc-fix-current)')
 
 vim.api.nvim_set_keymap('t', '<leader><esc>', [[<c-\><c-n>]], {noremap = true, silent = true})
-vim.api.nvim_set_keymap('t', '<c-h>', [[<c-\><c-n><c-W>h]], {noremap = true, silent = true})
-vim.api.nvim_set_keymap('t', '<c-j>', [[<c-\><c-n><c-W>j]], {noremap = true, silent = true})
-vim.api.nvim_set_keymap('t', '<c-k>', [[<c-\><c-n><c-W>k]], {noremap = true, silent = true})
-vim.api.nvim_set_keymap('t', '<c-l>', [[<c-\><c-n><c-W>l]], {noremap = true, silent = true})
+vim.api.nvim_set_keymap('t', '<leader><c-h>', [[<c-\><c-n><c-W>h]], {noremap = true, silent = true})
+vim.api.nvim_set_keymap('t', '<leader><c-j>', [[<c-\><c-n><c-W>j]], {noremap = true, silent = true})
+vim.api.nvim_set_keymap('t', '<leader><c-k>', [[<c-\><c-n><c-W>k]], {noremap = true, silent = true})
+vim.api.nvim_set_keymap('t', '<leader><c-l>', [[<c-\><c-n><c-W>l]], {noremap = true, silent = true})
 
 nmap('j', '<plug>(accelerated_jk_gj)')
 nmap('k', '<plug>(accelerated_jk_gk)')
@@ -74,12 +74,13 @@ nnoremap('<pageup>', '10k')
 nnoremap('<pagedown>', '10j')
 nnoremap('<esc>', '<esc>:noh<cr>')
 nnoremap('<space>', 'viw')
-inoremap('<tab>', [[
-            pumvisible() ? "\<C-n>" :
-            CheckBackspace() ? "\<TAB>" :
-            coc#refresh()
-            ]])
-inoremap('<s-tab>', [[pumvisible() ? "\<c-p>" : "\<c-h>"]])
+vim.cmd([[
+    inoremap <silent><expr> <tab>
+                \ pumvisible() ? "\<c-n>" :
+                \ CheckBackspace() ? "\<tab>" :
+                \ coc#refresh()
+    inoremap <silent><expr> <s-tab> pumvisible() ? "\<c-p>" : "\<c-h>"
+]])
 vim.cmd([[
     function! CheckBackspace() abort
         let col = col('.') - 1
@@ -117,9 +118,6 @@ vim.cmd([[function! ShowDocumentation()
 endfunction]])
 vim.cmd([[autocmd CursorHold * silent call CocActionAsync('highlight')]])
 
-imap('<a-tab>', [[copilot#Accept("\<cr>")]])
-vim.cmd([[let g:copilot_no_tab_map = v:true]])
-
 nnoremap('<m-1>', '<cmd>BufferLineGoToBuffer 1<cr>')
 nnoremap('<m-2>', '<cmd>BufferLineGoToBuffer 2<cr>')
 nnoremap('<m-3>', '<cmd>BufferLineGoToBuffer 3<cr>')
@@ -143,7 +141,7 @@ vim.cmd([[
     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
     let &t_SR = "\<Esc>]50;CursorShape=2\x7"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-    
+
     let g:coc_global_extensions = [
                 \ 'coc-json',
                 \ 'coc-cmake',
@@ -153,8 +151,8 @@ vim.cmd([[
                 \ 'coc-highlight',
                 \ 'coc-vimlsp'
                 \ ]
-    
-    
+
+
     let g:go_highlight_types = 1
     let g:go_highlight_fields = 1
     let g:go_highlight_functions = 1
@@ -168,8 +166,8 @@ vim.cmd([[
     let g:go_term_height = 10
     let g:go_term_close_on_exit = 0
     let g:go_list_type = "quickfix"
-    
-    
+
+
     let g:tagbar_type_go = {
                 \ 'ctagstype' : 'go',
                 \ 'kinds'     : [
@@ -197,9 +195,9 @@ vim.cmd([[
                             \ 'ctagsbin'  : 'gotags',
                             \ 'ctagsargs' : '-sort -silent'
                             \ }
-    
+
     let g:lsp_cxx_hl_use_text_props = 1
-    
+
     if !exists('g:airline_symbols')
         let g:airline_symbols = {}
     endif
@@ -218,10 +216,10 @@ vim.cmd([[
     let g:airline_powerline_fonts = 1
     let g:airline_theme='bubblegum'
     let g:airline#extensions#whitespace#enabled=0
-    
-    
+
+
     let g:cursorhold_updatetime = 100
-    
+
     if !exists('g:env')
         if has('win64') || has('win32') || has('win16')
             let g:env = 'WINDOWS'
@@ -235,7 +233,7 @@ vim.cmd([[
     if g:env =~ 'LINUX'
         let g:tagbar_ctags_bin = '/usr/bin/ctags'
     endif
-    
+
     let g:maplocalleader=';'
     let g:defx_icons_column_length = 2
     nnoremap <silent> <LocalLeader>e :<C-u>Defx -resume -buffer-name=tab`'defx' . tabpagenr()`<cr>
@@ -299,7 +297,7 @@ vim.cmd([[
                 \ 'Unknown'   : '?'
                 \ })
     autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 0 && exists('b:defx') | quit | endif
-    
+
     let g:gutentags_project_root = ['.root', '.svn', '.git', '.project']
     let g:gutentags_ctags_tagfile = '.tags'
     let s:vim_tags = expand('~/.cache/tags')
@@ -311,20 +309,20 @@ vim.cmd([[
     let g:gutentags_ctags_extra_args += ['--c++-kinds=+pxI']
     let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
     let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
-    
-    
+
+
     let g:auto_save = 1
     let g:auto_save_silent = 1
     let g:auto_save_events = ["InsertLeave", "TextChanged"]
     let g:auto_save_write_all_buffers = 1
-    
-    
+
+
     let g:rainbow_active = 1
-    
+
     let g:AutoPairsShortcutJump = '<m-n>'
-    
+
     command! -nargs=0 Format :call CocActionAsync('format')
-    
+
     hi default link LspCxxHlSymFunction cxxFunction
     hi default link LspCxxHlSymFunctionParameter cxxParameter
     hi default link LspCxxHlSymFileVariableStatic cxxFileVariableStatic
@@ -339,6 +337,6 @@ vim.cmd([[
     hi default link LspCxxHlSymEnumMember cxxEnumMember
     hi default link LspCxxHlSymParameter cxxParameter
     hi default link LspCxxHlSymClass cxxTypeAlias
-    
+
 
 ]])

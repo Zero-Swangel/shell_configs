@@ -180,7 +180,7 @@ return require('packer').startup(function()
     use 'mfussenegger/nvim-dap'
     use 'ryanoasis/vim-devicons'
     use 'Mofiqul/dracula.nvim'
-    
+
     if packer_bootstrap then
         require('packer').sync()
     end
