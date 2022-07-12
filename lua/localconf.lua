@@ -41,6 +41,7 @@ vim.o.updatetime = 200
 vim.o.smartcase = true
 vim.o.ignorecase = true
 
+vim.cmd('autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE')
 vim.cmd([[colorscheme dracula]])
 vim.cmd('autocmd InsertEnter * se cul')
 vim.cmd('autocmd InsertLeave * se nocul')

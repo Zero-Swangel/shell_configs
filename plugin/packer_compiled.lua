@@ -80,7 +80,7 @@ _G.packer_plugins = {
     url = "https://github.com/rhysd/accelerated-jk"
   },
   ["bufferline.nvim"] = {
-    config = { "\27LJ\2\ng\0\1\5\0\a\0\0149\1\0\0\18\3\1\0009\1\1\1'\4\2\0B\1\3\2\15\0\1\0X\2\6Ä6\1\3\0009\1\4\0019\1\5\0019\3\0\0'\4\6\0D\1\3\0K\0\1\0\t:t:r\16fnamemodify\afn\bvim\t%.md\nmatch\tname\31\0\4\a\0\2\0\5'\4\0\0\18\5\0\0'\6\1\0&\4\6\4L\4\2\0\6)\6(Ç\2\0\2\5\0\n\0%6\2\0\0009\2\1\0028\2\0\0029\2\2\2\6\2\3\0X\2\2Ä+\2\2\0L\2\2\0006\2\0\0009\2\4\0029\2\5\2\18\4\0\0B\2\2\2\6\2\6\0X\2\2Ä+\2\2\0L\2\2\0006\2\0\0009\2\4\0029\2\a\2B\2\1\2\a\2\b\0X\2\bÄ6\2\0\0009\2\1\0028\2\0\0029\2\2\2\6\2\t\0X\2\2Ä+\2\2\0L\2\2\0:\2\1\1\4\2\0\0X\2\2Ä+\2\2\0L\2\2\0K\0\1\0\twiki\16<work-repo>\vgetcwd\30<buffer-name-I-dont-want>\fbufname\afn\30<i-dont-want-to-see-this>\rfiletype\abo\bvim¨\6\1\0\6\0\17\0\0236\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\3\0'\2\4\0B\0\2\0029\0\5\0005\2\15\0005\3\6\0003\4\a\0=\4\b\0033\4\t\0=\4\n\0033\4\v\0=\4\f\0034\4\3\0005\5\r\0>\5\1\4=\4\14\3=\3\16\2B\0\2\1K\0\1\0\foptions\1\0\0\foffsets\1\0\3\ttext\18File Explorer\rfiletype\rNvimTree\15text_align\vcenter\18custom_filter\0\26diagnostics_indicator\0\19name_formatter\0\1\0\26\24right_mouse_command\16bdelete! %d\19indicator_icon\b‚ñé\tmode\fbuffers!diagnostics_update_in_insert\2\18modified_icon\b‚óè\16diagnostics\bcoc\rtab_size\3\18\22max_prefix_length\3\15\20max_name_length\3\18\20show_close_icon\2\28show_buffer_close_icons\2\23left_mouse_command\14buffer %d\23right_trunc_marker\bÔÇ©\18close_command\16bdelete! %d\fnumbers\fordinal\16color_icons\2\15close_icon\bÔÄç\22show_buffer_icons\2\22buffer_close_icon\bÔôï\22left_trunc_marker\bÔÇ®\24show_tab_indicators\2\24persist_buffer_sort\2\20separator_style\nslant\25enforce_regular_tabs\1\27always_show_bufferline\2\fsort_by\14directory\nsetup\15bufferline\frequire\18termguicolors\bopt\bvim\0" },
+    config = { "\27LJ\2\ng\0\1\5\0\a\0\0149\1\0\0\18\3\1\0009\1\1\1'\4\2\0B\1\3\2\15\0\1\0X\2\6Ä6\1\3\0009\1\4\0019\1\5\0019\3\0\0'\4\6\0D\1\3\0K\0\1\0\t:t:r\16fnamemodify\afn\bvim\t%.md\nmatch\tname\31\0\4\a\0\2\0\5'\4\0\0\18\5\0\0'\6\1\0&\4\6\4L\4\2\0\6)\6(Ç\2\0\2\5\0\n\0%6\2\0\0009\2\1\0028\2\0\0029\2\2\2\6\2\3\0X\2\2Ä+\2\2\0L\2\2\0006\2\0\0009\2\4\0029\2\5\2\18\4\0\0B\2\2\2\6\2\6\0X\2\2Ä+\2\2\0L\2\2\0006\2\0\0009\2\4\0029\2\a\2B\2\1\2\a\2\b\0X\2\bÄ6\2\0\0009\2\1\0028\2\0\0029\2\2\2\6\2\t\0X\2\2Ä+\2\2\0L\2\2\0:\2\1\1\4\2\0\0X\2\2Ä+\2\2\0L\2\2\0K\0\1\0\twiki\16<work-repo>\vgetcwd\30<buffer-name-I-dont-want>\fbufname\afn\30<i-dont-want-to-see-this>\rfiletype\abo\bvim¨\6\1\0\6\0\17\0\0236\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\3\0'\2\4\0B\0\2\0029\0\5\0005\2\15\0005\3\6\0003\4\a\0=\4\b\0033\4\t\0=\4\n\0033\4\v\0=\4\f\0034\4\3\0005\5\r\0>\5\1\4=\4\14\3=\3\16\2B\0\2\1K\0\1\0\foptions\1\0\0\foffsets\1\0\3\ttext\18File Explorer\rfiletype\rNvimTree\15text_align\vcenter\18custom_filter\0\26diagnostics_indicator\0\19name_formatter\0\1\0\26\23left_mouse_command\14buffer %d\23right_trunc_marker\bÔÇ©\22left_trunc_marker\bÔÇ®\15close_icon\bÔÄç\16color_icons\2\18modified_icon\b‚óè\24show_tab_indicators\2\22buffer_close_icon\bÔôï\24right_mouse_command\16bdelete! %d\19indicator_icon\b‚ñé\18close_command\16bdelete! %d\24persist_buffer_sort\2\fnumbers\fordinal\tmode\fbuffers\20separator_style\nslant\27always_show_bufferline\2\fsort_by\14directory!diagnostics_update_in_insert\2\25enforce_regular_tabs\1\16diagnostics\bcoc\rtab_size\3\18\22max_prefix_length\3\15\20max_name_length\3\18\20show_close_icon\2\28show_buffer_close_icons\2\22show_buffer_icons\2\nsetup\15bufferline\frequire\18termguicolors\bopt\bvim\0" },
     loaded = true,
     path = "/Users/walker/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
@@ -100,10 +100,10 @@ _G.packer_plugins = {
     path = "/Users/walker/.local/share/nvim/site/pack/packer/start/defx.nvim",
     url = "https://github.com/Shougo/defx.nvim"
   },
-  dracula = {
+  ["dracula.nvim"] = {
     loaded = true,
-    path = "/Users/walker/.local/share/nvim/site/pack/packer/start/dracula",
-    url = "https://github.com/dracula/vim"
+    path = "/Users/walker/.local/share/nvim/site/pack/packer/start/dracula.nvim",
+    url = "https://github.com/Mofiqul/dracula.nvim"
   },
   ["far.vim"] = {
     loaded = true,
@@ -240,18 +240,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: galaxyline.nvim
+time([[Config for galaxyline.nvim]], true)
+try_loadstring("\27LJ\2\n(\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\revilline\frequire\0", "config", "galaxyline.nvim")
+time([[Config for galaxyline.nvim]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
 time([[Config for toggleterm.nvim]], false)
 -- Config for: bufferline.nvim
 time([[Config for bufferline.nvim]], true)
-try_loadstring("\27LJ\2\ng\0\1\5\0\a\0\0149\1\0\0\18\3\1\0009\1\1\1'\4\2\0B\1\3\2\15\0\1\0X\2\6Ä6\1\3\0009\1\4\0019\1\5\0019\3\0\0'\4\6\0D\1\3\0K\0\1\0\t:t:r\16fnamemodify\afn\bvim\t%.md\nmatch\tname\31\0\4\a\0\2\0\5'\4\0\0\18\5\0\0'\6\1\0&\4\6\4L\4\2\0\6)\6(Ç\2\0\2\5\0\n\0%6\2\0\0009\2\1\0028\2\0\0029\2\2\2\6\2\3\0X\2\2Ä+\2\2\0L\2\2\0006\2\0\0009\2\4\0029\2\5\2\18\4\0\0B\2\2\2\6\2\6\0X\2\2Ä+\2\2\0L\2\2\0006\2\0\0009\2\4\0029\2\a\2B\2\1\2\a\2\b\0X\2\bÄ6\2\0\0009\2\1\0028\2\0\0029\2\2\2\6\2\t\0X\2\2Ä+\2\2\0L\2\2\0:\2\1\1\4\2\0\0X\2\2Ä+\2\2\0L\2\2\0K\0\1\0\twiki\16<work-repo>\vgetcwd\30<buffer-name-I-dont-want>\fbufname\afn\30<i-dont-want-to-see-this>\rfiletype\abo\bvim¨\6\1\0\6\0\17\0\0236\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\3\0'\2\4\0B\0\2\0029\0\5\0005\2\15\0005\3\6\0003\4\a\0=\4\b\0033\4\t\0=\4\n\0033\4\v\0=\4\f\0034\4\3\0005\5\r\0>\5\1\4=\4\14\3=\3\16\2B\0\2\1K\0\1\0\foptions\1\0\0\foffsets\1\0\3\ttext\18File Explorer\rfiletype\rNvimTree\15text_align\vcenter\18custom_filter\0\26diagnostics_indicator\0\19name_formatter\0\1\0\26\24right_mouse_command\16bdelete! %d\19indicator_icon\b‚ñé\tmode\fbuffers!diagnostics_update_in_insert\2\18modified_icon\b‚óè\16diagnostics\bcoc\rtab_size\3\18\22max_prefix_length\3\15\20max_name_length\3\18\20show_close_icon\2\28show_buffer_close_icons\2\23left_mouse_command\14buffer %d\23right_trunc_marker\bÔÇ©\18close_command\16bdelete! %d\fnumbers\fordinal\16color_icons\2\15close_icon\bÔÄç\22show_buffer_icons\2\22buffer_close_icon\bÔôï\22left_trunc_marker\bÔÇ®\24show_tab_indicators\2\24persist_buffer_sort\2\20separator_style\nslant\25enforce_regular_tabs\1\27always_show_bufferline\2\fsort_by\14directory\nsetup\15bufferline\frequire\18termguicolors\bopt\bvim\0", "config", "bufferline.nvim")
+try_loadstring("\27LJ\2\ng\0\1\5\0\a\0\0149\1\0\0\18\3\1\0009\1\1\1'\4\2\0B\1\3\2\15\0\1\0X\2\6Ä6\1\3\0009\1\4\0019\1\5\0019\3\0\0'\4\6\0D\1\3\0K\0\1\0\t:t:r\16fnamemodify\afn\bvim\t%.md\nmatch\tname\31\0\4\a\0\2\0\5'\4\0\0\18\5\0\0'\6\1\0&\4\6\4L\4\2\0\6)\6(Ç\2\0\2\5\0\n\0%6\2\0\0009\2\1\0028\2\0\0029\2\2\2\6\2\3\0X\2\2Ä+\2\2\0L\2\2\0006\2\0\0009\2\4\0029\2\5\2\18\4\0\0B\2\2\2\6\2\6\0X\2\2Ä+\2\2\0L\2\2\0006\2\0\0009\2\4\0029\2\a\2B\2\1\2\a\2\b\0X\2\bÄ6\2\0\0009\2\1\0028\2\0\0029\2\2\2\6\2\t\0X\2\2Ä+\2\2\0L\2\2\0:\2\1\1\4\2\0\0X\2\2Ä+\2\2\0L\2\2\0K\0\1\0\twiki\16<work-repo>\vgetcwd\30<buffer-name-I-dont-want>\fbufname\afn\30<i-dont-want-to-see-this>\rfiletype\abo\bvim¨\6\1\0\6\0\17\0\0236\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\3\0'\2\4\0B\0\2\0029\0\5\0005\2\15\0005\3\6\0003\4\a\0=\4\b\0033\4\t\0=\4\n\0033\4\v\0=\4\f\0034\4\3\0005\5\r\0>\5\1\4=\4\14\3=\3\16\2B\0\2\1K\0\1\0\foptions\1\0\0\foffsets\1\0\3\ttext\18File Explorer\rfiletype\rNvimTree\15text_align\vcenter\18custom_filter\0\26diagnostics_indicator\0\19name_formatter\0\1\0\26\23left_mouse_command\14buffer %d\23right_trunc_marker\bÔÇ©\22left_trunc_marker\bÔÇ®\15close_icon\bÔÄç\16color_icons\2\18modified_icon\b‚óè\24show_tab_indicators\2\22buffer_close_icon\bÔôï\24right_mouse_command\16bdelete! %d\19indicator_icon\b‚ñé\18close_command\16bdelete! %d\24persist_buffer_sort\2\fnumbers\fordinal\tmode\fbuffers\20separator_style\nslant\27always_show_bufferline\2\fsort_by\14directory!diagnostics_update_in_insert\2\25enforce_regular_tabs\1\16diagnostics\bcoc\rtab_size\3\18\22max_prefix_length\3\15\20max_name_length\3\18\20show_close_icon\2\28show_buffer_close_icons\2\22show_buffer_icons\2\nsetup\15bufferline\frequire\18termguicolors\bopt\bvim\0", "config", "bufferline.nvim")
 time([[Config for bufferline.nvim]], false)
--- Config for: galaxyline.nvim
-time([[Config for galaxyline.nvim]], true)
-try_loadstring("\27LJ\2\n(\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\revilline\frequire\0", "config", "galaxyline.nvim")
-time([[Config for galaxyline.nvim]], false)
 if should_profile then save_profiles() end
 
 end)
