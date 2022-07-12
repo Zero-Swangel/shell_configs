@@ -281,6 +281,7 @@ Plug 'luochen1990/rainbow'
 Plug 'airblade/vim-gitgutter'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'vim-autoformat/vim-autoformat'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 
@@ -392,7 +393,7 @@ func! StartDefx() abort
         return fnamemodify(s:arg, ':h')
     endif
 endfunc
-autocmd VimEnter * Defx `StartDefx()` -buffer-name=tab`'defx' . tabpagenr()` -no-focus -search=`expand('%:p')`
+autocmd VimEnter * Defx `StartDefx()` -focus -resume -buffer-name=tab`'defx' . tabpagenr()` -no-focus -search=`expand('%:p')`
 function! s:defx_mappings() abort
     setlocal signcolumn=no
     nnoremap <silent><buffer><expr> <cr> defx#is_directory() ? defx#do_action('open_or_close_tree') : defx#do_action('multi', ['drop'])
@@ -465,7 +466,7 @@ let g:auto_save_write_all_buffers = 1
 
 let g:rainbow_active = 1
 
-let g:AutoPairsShortcutJump = '<s-tab>'
+let g:AutoPairsShortcutJump = '<m-n>'
 
 command! -nargs=0 Format :call CocActionAsync('format')
 
