@@ -29,7 +29,7 @@ nnoremap('U', '<c-R>')
 vnoremap('<c-c>', '"+y')
 
 vim.cmd('let g:mapleader = ","')
-nnoremap('<leader>w', ':bd<cr>')
+nnoremap('<leader>w', ':bp | bd #<cr>')
 nnoremap('<leader>e', ':q<cr>')
 
 nnoremap(';t', ':ToggleTerm<cr>')
