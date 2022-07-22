@@ -96,7 +96,7 @@ inoremap('<a-k>', '<up>')
 inoremap('<a-l>', '<right>')
 inoremap('jj', '<esc>')
 
-nnoremap(';s', ':TagbarOpenAutoClose<cr>')
+nnoremap(';s', ':Vista<cr>')
 nnoremap('<leader>ag', ':Ag <c-r><c-w><cr>')
 nnoremap('<c-p>', ':Files<cr>')
 nnoremap('<c-b>', ':Buffers<cr>')

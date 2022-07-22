@@ -1,0 +1,61 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/walker/.config/nvim/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+buffer_not_empty	lua/evilline.lua	/^local buffer_not_empty = function()$/;"	f
+checkwidth	lua/evilline.lua	/^local checkwidth = function()$/;"	f
+close_command	lua/plugins.lua	/^                    close_command = "bdelete! %d",       -- can be a string | function, see "Mou/;"	f
+condition	lua/evilline.lua	/^        condition = function()$/;"	f
+config	lua/plugins.lua	/^		config = function()$/;"	f
+config	lua/plugins.lua	/^        config = function()$/;"	f
+custom_filter	lua/plugins.lua	/^                    custom_filter = function(buf_number, buf_numbers)$/;"	f
+diagnostics_indicator	lua/plugins.lua	/^                    diagnostics_indicator = function(count, level, diagnostics_dict, context)$/;"	f
+error_msg	plugin/packer_compiled.lua	/^local no_errors, error_msg = pcall(function()$/;"	f
+file_readonly	lua/evilline.lua	/^local function file_readonly(readonly_icon)$/;"	f
+func_name	lua/evilline.lua	/^  local has_func, func_name = pcall(vim.api.nvim_buf_get_var,0,'coc_current_function')$/;"	f
+get_coc_lsp	lua/evilline.lua	/^local function get_coc_lsp()$/;"	f
+get_color	lua/evilline.lua	/^local function get_color()$/;"	f
+get_color_bg	lua/evilline.lua	/^local function get_color_bg()$/;"	f
+get_current_file_name	lua/evilline.lua	/^local function get_current_file_name()$/;"	f
+get_current_func	lua/evilline.lua	/^local function get_current_func()$/;"	f
+get_debug_status	lua/evilline.lua	/^local function get_debug_status()$/;"	f
+get_diagnostic_info	lua/evilline.lua	/^function get_diagnostic_info()$/;"	f
+get_function_info	lua/evilline.lua	/^function get_function_info()$/;"	f
+has_file_prog_filetype	lua/evilline.lua	/^function has_file_prog_filetype()$/;"	f
+has_file_type	lua/evilline.lua	/^function has_file_type()$/;"	f
+has_value	lua/evilline.lua	/^local function has_value (tab, val)$/;"	f
+imap	lua/keymaps.lua	/^local function imap(lhs, rhs)$/;"	f
+inoremap	lua/keymaps.lua	/^local function inoremap(lhs, rhs)$/;"	f
+left_mouse_command	lua/plugins.lua	/^                    left_mouse_command = "buffer %d",    -- can be a string | function, see "Mou/;"	f
+lsp_status	lua/evilline.lua	/^local function lsp_status(status)$/;"	f
+middle_mouse_command	lua/plugins.lua	/^                    middle_mouse_command = nil,          -- can be a string | function, see "Mou/;"	f
+name_formatter	lua/plugins.lua	/^                    name_formatter = function(buf)  -- buf contains a "name", "path" and "bufnr"$/;"	f
+nmap	lua/keymaps.lua	/^local function nmap(lhs, rhs)$/;"	f
+nnoremap	lua/keymaps.lua	/^local function nnoremap(lhs, rhs)$/;"	f
+numbers	lua/plugins.lua	/^                    numbers = "ordinal", -- | "ordinal" | "buffer_id" | "both" | function({ ordi/;"	f
+offsets	lua/plugins.lua	/^                    offsets = {{filetype = "NvimTree", text = "File Explorer", text_align="cente/;"	f
+provider	lua/evilline.lua	/^        provider = function()$/;"	f
+provider	lua/evilline.lua	/^    provider = function () return '' end$/;"	f
+provider	lua/evilline.lua	/^    provider = function() return ' ' end,$/;"	f
+provider	lua/evilline.lua	/^    provider = function() return '  ' end,$/;"	f
+provider	lua/evilline.lua	/^    provider = function() return '' end,$/;"	f
+provider	lua/evilline.lua	/^    provider = function()$/;"	f
+right_mouse_command	lua/plugins.lua	/^                    right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mou/;"	f
+save_profiles	plugin/packer_compiled.lua	/^local function save_profiles(threshold)$/;"	f
+sort_by	lua/plugins.lua	/^                    sort_by =  'directory',  -- ,'id' | 'extension' | 'relative_directory' | 'di/;"	f
+tag	lua/plugins.lua	/^    use {"akinsho\/toggleterm.nvim", tag = 'v2.*', config = function()$/;"	f
+time	plugin/packer_compiled.lua	/^    time = function(chunk, start) end$/;"	f
+time	plugin/packer_compiled.lua	/^    time = function(chunk, start)$/;"	f
+trailing_whitespace	lua/evilline.lua	/^local function trailing_whitespace()$/;"	f
+try_loadstring	plugin/packer_compiled.lua	/^local function try_loadstring(s, component, name)$/;"	f
+vmap	lua/keymaps.lua	/^local function vmap(lhs, rhs)$/;"	f
+vnoremap	lua/keymaps.lua	/^local function vnoremap(lhs, rhs)$/;"	f
+xmap	lua/keymaps.lua	/^local function xmap(lhs, rhs)$/;"	f
+xnoremap	lua/keymaps.lua	/^local function xnoremap(lhs, rhs)$/;"	f
