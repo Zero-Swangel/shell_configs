@@ -26,39 +26,6 @@ return require('packer').startup(function()
         requires = { 'kyazdani42/nvim-web-devicons', opt = true },
     })
 
-    -- use({
-	-- 	'NTBBloodbath/doom-one.nvim',
-	-- 	config = function()
-	-- 		require('doom-one').setup({
-	-- 			cursor_coloring = false,
-	-- 			terminal_colors = false,
-	-- 			italic_comments = false,
-	-- 			enable_treesitter = true,
-	-- 			transparent_background = false,
-	-- 			pumblend = {
-	-- 				enable = true,
-	-- 				transparency_amount = 20,
-	-- 			},
-	-- 			plugins_integrations = {
-	-- 				neorg = true,
-	-- 				barbar = true,
-	-- 				bufferline = false,
-	-- 				gitgutter = false,
-	-- 				gitsigns = true,
-	-- 				telescope = false,
-	-- 				neogit = true,
-	-- 				nvim_tree = true,
-	-- 				dashboard = true,
-	-- 				startify = true,
-	-- 				whichkey = true,
-	-- 				indent_blankline = true,
-	-- 				vim_illuminate = true,
-	-- 				lspsaga = false,
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- })
-
     use {'akinsho/bufferline.nvim',
 		tag = "v2.*",
 		requires = 'kyazdani42/nvim-web-devicons',
@@ -143,7 +110,8 @@ return require('packer').startup(function()
 	}
 
     use {'neoclide/coc.nvim', branch = 'release'}
-    use {'preservim/tagbar'}
+    use 'liuchengxu/vista.vim'
+    -- use {'preservim/tagbar'}
     use {'fatih/vim-go', run = ':GoUpdateBinaries'}
     -- use {'github/copilot.vim'}
     use {'antoinemadec/FixCursorHold.nvim'}

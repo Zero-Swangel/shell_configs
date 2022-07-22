@@ -142,9 +142,26 @@ vim.cmd([[
     let &t_SR = "\<Esc>]50;CursorShape=2\x7"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
+    let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+    let g:vista_default_executive = 'ctags'
+    let g:vista_executive_for = {
+      \ 'cpp': 'coc',
+      \ 'php': 'coc',
+      \ }
+    let g:vista_ctags_cmd = {
+          \ 'haskell': 'hasktags -x -o - -c',
+          \ }
+    let g:vista_fzf_preview = ['right:50%']
+    let g:vista#renderer#enable_icon = 1
+    let g:vista#renderer#icons = {
+      \   "function": "\uf794",
+      \   "variable": "\uf71b",
+      \  }
+
     let g:coc_global_extensions = [
                 \ 'coc-json',
                 \ 'coc-cmake',
+                \ 'coc-clangd',
                 \ 'coc-pyright',
                 \ 'coc-go',
                 \ 'coc-yaml',
