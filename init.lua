@@ -1,4 +1,3 @@
-require('plugins')
--- require('lspconf')
-require('keymaps')
 require('localconf')
+require('plugins')
+require('keymaps')
