@@ -1,4 +1,5 @@
 {
   "Lua.telemetry.enable": false,
-  "sumneko-lua.enableNvimLuaDev": true
+  "sumneko-lua.enableNvimLuaDev": true,
+  "clangd.fallbackFlags": ["-std=c++20"]
 }
